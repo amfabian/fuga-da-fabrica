@@ -66,7 +66,7 @@ export class SplashScene extends Phaser.Scene {
 
         // Desenhar os fios (linhas finas)
         this.wireGraphics = this.add.graphics();
-        this.wireGraphics.lineStyle(1, 0x3a3a5c, 0.4);
+        this.wireGraphics.lineStyle(1, 0x8899aa, 0.4);
         for (const edge of this.bgEdges) {
             this.wireGraphics.lineBetween(
                 edge.from.x,
@@ -78,7 +78,7 @@ export class SplashScene extends Phaser.Scene {
 
         // Desenhar os nós (círculos pequenos)
         for (const node of this.bgNodes) {
-            const circle = this.add.circle(node.x, node.y, 4, 0x555577, 0.6);
+            const circle = this.add.circle(node.x, node.y, 4, 0x7788aa, 0.6);
             // Pulso suave nos nós
             this.tweens.add({
                 targets: circle,
@@ -120,7 +120,7 @@ export class SplashScene extends Phaser.Scene {
                 color: "#000000",
             })
             .setOrigin(0.5)
-            .setAlpha(0.4);
+            .setAlpha(0.15);
 
         // Título principal
         const title = this.add
@@ -128,7 +128,7 @@ export class SplashScene extends Phaser.Scene {
                 fontFamily: "monospace",
                 fontSize: "56px",
                 fontStyle: "bold",
-                color: "#f1c40f",
+                color: "#b8860b",
             })
             .setOrigin(0.5)
             .setAlpha(0);
@@ -147,7 +147,7 @@ export class SplashScene extends Phaser.Scene {
             .text(W / 2, 160, "Programação Visual e Robótica", {
                 fontFamily: "monospace",
                 fontSize: "18px",
-                color: "#94e2d5",
+                color: "#1a6b5a",
             })
             .setOrigin(0.5)
             .setAlpha(0);
@@ -243,7 +243,7 @@ export class SplashScene extends Phaser.Scene {
             .text(W / 2, H - 30, "Objeto de Aprendizagem – Mestrado", {
                 fontFamily: "monospace",
                 fontSize: "12px",
-                color: "#555577",
+                color: "#6b7a8d",
             })
             .setOrigin(0.5);
 
@@ -301,8 +301,8 @@ export class SplashScene extends Phaser.Scene {
         // Olhos
         const eyeL = this.add.circle(-15, -12, 7, 0xffffff);
         const eyeR = this.add.circle(15, -12, 7, 0xffffff);
-        const pupilL = this.add.circle(-13, -12, 3.5, 0x1a1a2e);
-        const pupilR = this.add.circle(17, -12, 3.5, 0x1a1a2e);
+        const pupilL = this.add.circle(-13, -12, 3.5, 0x2c3e50);
+        const pupilR = this.add.circle(17, -12, 3.5, 0x2c3e50);
 
         // Antena
         const antenna = this.add.rectangle(0, -37, 4, 14, 0xe74c3c);

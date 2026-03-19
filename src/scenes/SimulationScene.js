@@ -20,8 +20,8 @@ import Phaser from "phaser";
 const GRID_COLS = 5;
 const GRID_ROWS = 5;
 const CELL_SIZE = 80;
-const GRID_LINE_COLOR = 0x3a3a5c;
-const GRID_LINE_ALPHA = 0.8;
+const GRID_LINE_COLOR = 0x6b7a99;
+const GRID_LINE_ALPHA = 0.9;
 
 /**
  * Mapa de direção → delta de grid.
@@ -52,11 +52,11 @@ export const LEVELS = {
         obstacles: [],
         availableNodes: ["move_forward"],
         instructions: [
-            '1. Clique em "+ MOVER FRENTE" para criar nós',
-            "2. Clique na porta verde (●) de saída",
+            '1. Clique em "+ MOVER FRENTE" para criar nós.',
+            "2. Clique na porta verde (●) de saída,",
             "   depois na porta vermelha (●) de entrada",
-            "   para conectá-los com um fio",
-            '3. Conecte 3 nós "MOVER FRENTE" ao "INÍCIO"',
+            "   para conectá-los com um fio.",
+            '3. Conecte 3 nós "MOVER FRENTE" ao "INÍCIO".',
             '4. Clique em "▶ EXECUTAR" para rodar!',
         ],
     },
@@ -69,8 +69,8 @@ export const LEVELS = {
         obstacles: [],
         availableNodes: ["move_forward", "turn_right", "turn_left"],
         instructions: [
-            '1. Use "MOVER FRENTE" e "GIRAR DIREITA"',
-            "2. Mova para a direita, gire, e continue",
+            '1. Use "MOVER FRENTE" e "GIRAR DIREITA".',
+            "2. Mova para a direita, gire e continue.",
             "3. A bateria está em posição aleatória!",
             '4. Clique em "▶ EXECUTAR" para testar!',
         ],
@@ -141,11 +141,11 @@ export const LEVELS = {
             "check_sensor",
         ],
         instructions: [
-            '1. Use "VERIFICAR SENSOR" sobre as caixas',
-            "2. O robô deve ESTAR SOBRE a caixa para",
-            "   verificar se é verde (Livre) ou vermelha",
-            "   (Bloq.)",
-            "3. Verifique as DUAS caixas e chegue",
+            '1. Use "VERIFICAR SENSOR" sobre as caixas.',
+            "2. O robô deve estar sobre a caixa para",
+            "   verificar se é verde (livre) ou vermelha",
+            "   (bloqueada).",
+            "3. Verifique as duas caixas e chegue",
             "   à bateria para vencer!",
             '4. Clique em "▶ EXECUTAR" para testar!',
         ],
@@ -196,7 +196,7 @@ export class SimulationScene extends Phaser.Scene {
             .text(halfW / 2, 30, "SIMULAÇÃO", {
                 fontFamily: "monospace",
                 fontSize: "22px",
-                color: "#94e2d5",
+                color: "#1a6b5a",
             })
             .setOrigin(0.5);
 
@@ -205,14 +205,14 @@ export class SimulationScene extends Phaser.Scene {
             .text(halfW / 2, 58, "", {
                 fontFamily: "monospace",
                 fontSize: "14px",
-                color: "#888",
+                color: "#4a5568",
             })
             .setOrigin(0.5);
         this._updateLevelText();
 
         // Linha divisória na borda direita
         const divider = this.add.graphics();
-        divider.lineStyle(2, 0x555577, 1);
+        divider.lineStyle(2, 0x8899aa, 1);
         divider.lineBetween(halfW - 1, 0, halfW - 1, fullH);
     }
 

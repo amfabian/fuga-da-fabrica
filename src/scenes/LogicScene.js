@@ -62,16 +62,16 @@ export class LogicScene extends Phaser.Scene {
             fullH / 2,
             halfW,
             fullH,
-            0x0f0f23,
+            0xdce3ed,
         );
-        bg.setAlpha(0.5);
+        bg.setAlpha(0.6);
 
         // Título
         this.add
             .text(halfW / 2, 30, "LÓGICA", {
                 fontFamily: "monospace",
                 fontSize: "22px",
-                color: "#f1c40f",
+                color: "#b8860b",
             })
             .setOrigin(0.5);
 
@@ -140,9 +140,9 @@ export class LogicScene extends Phaser.Scene {
             paletteY,
             halfW - 40,
             50,
-            0x1a1a3e,
+            0xc8d0e0,
         );
-        paletteBg.setStrokeStyle(1, 0x3a3a5c);
+        paletteBg.setStrokeStyle(1, 0x8899aa);
         paletteBg.setAlpha(0.8);
         this.paletteObjects.push(paletteBg);
 
@@ -150,7 +150,7 @@ export class LogicScene extends Phaser.Scene {
             .text(20, paletteY, "Paleta:", {
                 fontFamily: "monospace",
                 fontSize: "13px",
-                color: "#888",
+                color: "#4a5568",
             })
             .setOrigin(0, 0.5);
         this.paletteObjects.push(paletteLabel);
@@ -270,12 +270,23 @@ export class LogicScene extends Phaser.Scene {
         const level = LEVELS[levelNum];
         const instructions = level ? level.instructions : [];
 
+        // Título "Instruções"
+        const title = this.add
+            .text(halfW - 20, fullH - 180, "Instruções", {
+                fontFamily: "monospace",
+                fontSize: "16px",
+                color: "#2c3e50",
+                fontStyle: "bold",
+            })
+            .setOrigin(1, 0.5);
+        this.instructionObjects.push(title);
+
         instructions.forEach((text, i) => {
             const t = this.add
-                .text(halfW - 20, fullH - 160 + i * 20, text, {
+                .text(halfW - 20, fullH - 155 + i * 24, text, {
                     fontFamily: "monospace",
-                    fontSize: "11px",
-                    color: "#666",
+                    fontSize: "14px",
+                    color: "#3a4a5c",
                 })
                 .setOrigin(1, 0.5);
             this.instructionObjects.push(t);
